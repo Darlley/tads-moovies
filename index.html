@@ -1,0 +1,865 @@
+<html lang="pt" class="no-js k-webkit k-webkit98 js-focus-visible" data-js-focus-visible="">
+  <head>
+    <title>Filmes Populares — The Movie Database (TMDB)</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cleartype" content="on">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Movies, TV Shows, Streaming, Reviews, API, Actors, Actresses, Photos, User Ratings, Synopsis, Trailers, Teasers, Credits, Cast">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="The Movie Database (TMDB) is a popular, user editable database for movies and TV shows.">
+    <meta name="msapplication-TileImage" content="/assets/2/v4/icons/mstile-144x144-30e7905a8315a080978ad6aeb71c69222b72c2f75d26dab1224173a96fecc962.png">
+    <meta name="msapplication-TileColor" content="#032541">
+    <meta name="theme-color" content="#032541">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.themoviedb.org/assets/2/apple-touch-icon-57ed4b3b0450fd5e9a0c20f34e814b82adaa1085c79bdde2f00ca8787b63d2c4.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.themoviedb.org/assets/2/favicon-32x32-543a21832c8931d3494a68881f6afcafc58e96c5d324345377f3197a37b367b5.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.themoviedb.org/assets/2/favicon-16x16-b362d267873ce9c5a39f686a11fe67fec2a72ed25fa8396c11b71aa43c938b11.png">
+    <link rel="manifest" href="/manifest.json?version=3">
+    <link rel="canonical" href="https://www.themoviedb.org/movie">
+    <link rel="search" type="application/opensearchdescription+xml" title="TMDB Search" href="/opensearch.xml">
+    <link rel="preload" href="https://www.themoviedb.org/assets/2/Consensus-3cba2c4d050ea63dbf7783173d288faf9ecb2942515a5e7f6e1beecabb2eaf72.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="https://www.themoviedb.org/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular-f38472b9e378b8c936f55a92677f575ab69e414d7cc3706ecfefeacd994b7975.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="https://www.themoviedb.org/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-italic-48273a74acbc1611b6ef1d0a771bb8ef042b9922b51d5bff560571dddcb5542a.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="https://www.themoviedb.org/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300-db9f15a13a9f8b8bc46db7756ab863e8834bd20a7a1124c4c0a5a8f7892f3e99.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="https://www.themoviedb.org/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600-6a087a74d78fc7d7b97fa1b0911c4ff3be4ff0bd5144618fd7ddc63ef1777f3a.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="https://www.themoviedb.org/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700-d67f7dff97d105f4ac5616b00fc7822ce2c33f653ece2f547995e6a71bb7b993.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="stylesheet" href="https://www.themoviedb.org/assets/2/v4/fonts-36ddd04013299b102c5aa8b9f8098a1cb925ca0e8e037e557f7e65870703a6bb.css" media="screen">
+    <link rel="stylesheet" href="https://www.themoviedb.org/assets/2/application-a8e56dc9b9064086646f2f8bcd562ce7e39a07396bea8dbb7bc37a0cb427ed08.css" media="screen">
+    <link rel="stylesheet" href="https://www.themoviedb.org/assets/2/v4/media-43f59393eeec00930b7a9c437a522faee8b8fa0e9ba16bcb7ffabe6f94d84afd.css" media="screen">
+    <link rel="stylesheet" href="https://www.themoviedb.org/assets/2/v4/discover-421028eba2c3eaf5699e02314870662bfc46a923ce94d25af7cfb312dd37ad93.css" media="screen">
+    <link rel="stylesheet" href="https://www.themoviedb.org/assets/2/v4/account-3a7e7607340c2ba9de9204b09ee40d73a687e5df2b2f7f6194e034fa8fd869c7.css" media="screen">
+    <link rel="alternate" hreflang="x-default" href="https://www.themoviedb.org/movie">
+    <script src="https://www.themoviedb.org/assets/2/jquery-3.5.1.min-f7f6a5894f1d19ddad6fa392b2ece2c5e578cbf7da4ea805b6885eb6985b6e3d.js"></script>
+    <script src="https://www.themoviedb.org/assets/2/kendo-59bc8069669538cda019bccf140d9a7598fd5e3392322771187961e4fef87b99.js"></script>
+    <script src="https://www.themoviedb.org/assets/2/kendo-2021.1.204/kendo.calendar.min-ff597f14a778b702ec1cf9967dec754e429caf1558c8b89f0de036e8efe39761.js"></script>
+    <script src="https://www.themoviedb.org/assets/2/kendo-2021.1.204/kendo.datepicker.min-9efa21cba900555da428262129f44042706c5abac5644c872d9cac78f010493a.js"></script>
+    <script src="https://www.themoviedb.org/assets/2/kendo-2021.1.204/kendo.slider.min-1e770b8fc7facf8ee48d3b0ad7abdfb598ab17cb69add240accc8df5fa2bc919.js"></script>
+  
+  <link rel="stylesheet" href="./css/style_1.css"> 
+  <link rel="stylesheet" href="./css/style_2.css">  
+  <link rel="stylesheet" href="./css/style_3.css">  
+  <link rel="stylesheet" href="./css/style_4.css">  
+</head>
+<body class="pt v4">
+  <div class="page_wrap movie_wrap">
+
+  <header class="normal smaller no_animation smaller  subtle">
+  <div class="content">
+    <div class="sub_media">
+      <div class="nav_wrapper">
+        <a class="logo" href="/?language=pt-BR">
+          <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="The Movie Database (TMDB)" width="154" height="20">
+        </a>
+        <ul class="dropdown_menu navigation k-widget k-reset k-header k-menu k-menu-horizontal" data-role="menu" tabindex="0" role="menubar">
+            <li aria-haspopup="true" class="k-item k-menu-item k-state-default k-first" role="menuitem">
+              <a class="no_click k-link k-menu-link" href="/movie?language=pt-BR">Filmes<span class="k-menu-expand-arrow k-icon k-i-arrow-60-down"></span></a>
+              <ul class="k-group k-menu-group" role="menu" aria-hidden="true">
+                <li class="k-item k-menu-item k-state-default k-first" role="menuitem"><a href="/movie?language=pt-BR" class="k-link k-menu-link">Populares</a></li>
+                <li class="k-item k-menu-item k-state-default" role="menuitem"><a href="/movie/now-playing?language=pt-BR" class="k-link k-menu-link">Em cartaz</a></li>
+                <li class="k-item k-menu-item k-state-default" role="menuitem"><a href="/movie/upcoming?language=pt-BR" class="k-link k-menu-link">Próximas Estreias</a></li>
+                <li class="k-item k-menu-item k-state-default k-last" role="menuitem"><a href="/movie/top-rated?language=pt-BR" class="k-link k-menu-link">Mais bem avaliados</a></li>
+              </ul>
+            </li>
+            <li aria-haspopup="true" class="k-item k-menu-item k-state-default" role="menuitem">
+              <a class="no_click k-link k-menu-link" href="/tv?language=pt-BR">Séries<span class="k-menu-expand-arrow k-icon k-i-arrow-60-down"></span></a>
+
+              <ul class="k-group k-menu-group" role="menu" aria-hidden="true">
+                <li class="k-item k-menu-item k-state-default k-first" role="menuitem"><a href="/tv?language=pt-BR" class="k-link k-menu-link">Populares</a></li>
+                <li class="k-item k-menu-item k-state-default" role="menuitem"><a href="/tv/airing-today?language=pt-BR" class="k-link k-menu-link">Em exibição hoje</a></li>
+                <li class="k-item k-menu-item k-state-default" role="menuitem"><a href="/tv/on-the-air?language=pt-BR" class="k-link k-menu-link">Na TV</a></li>
+                <li class="k-item k-menu-item k-state-default k-last" role="menuitem"><a href="/tv/top-rated?language=pt-BR" class="k-link k-menu-link">Mais bem avaliadas</a></li>
+              </ul>
+            </li>
+            <li aria-haspopup="true" class="k-item k-menu-item k-state-default" role="menuitem">
+              <a class="no_click k-link k-menu-link" href="/person?language=pt-BR">Pessoas<span class="k-menu-expand-arrow k-icon k-i-arrow-60-down"></span></a>
+
+              <ul class="k-group k-menu-group" role="menu" aria-hidden="true">
+                <li class="k-item k-menu-item k-state-default k-first k-last" role="menuitem"><a href="/person?language=pt-BR" class="k-link k-menu-link">Pessoas Populares</a></li>
+              </ul>
+            </li>
+            <li aria-haspopup="true" class="k-item k-menu-item k-state-default k-last" role="menuitem">
+              <a class="no_click k-link k-menu-link" href="#">Mais<span class="k-menu-expand-arrow k-icon k-i-arrow-60-down"></span></a>
+
+              <ul class="k-group k-menu-group" role="menu" aria-hidden="true">
+                <li class="k-item k-menu-item k-state-default k-first" role="menuitem"><a href="/discuss?language=pt-BR" class="k-link k-menu-link">Discussões</a></li>
+                <li class="k-item k-menu-item k-state-default" role="menuitem"><a href="/leaderboard?language=pt-BR" class="k-link k-menu-link">Placar de colaboradores</a></li>
+                <li class="k-item k-menu-item k-state-default" role="menuitem"><a href="/talk?language=pt-BR" class="k-link k-menu-link">Suporte</a></li>
+                <li class="k-item k-menu-item k-state-default k-last" role="menuitem"><a href="/documentation/api?language=pt-BR" class="k-link k-menu-link">API</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+      <div class="flex">
+        <ul class="primary">
+          <li class="glyph new_buttons" data-role="tooltip">
+            <a class="new_icon no_click" href="#">
+              <span class="glyphicons_v2 plus white"></span>
+            </a>
+          </li>
+          <li class="translate" data-role="tooltip">
+            <div>pt</div>
+          </li>
+          <li><a href="/login?language=pt-BR">Entrar</a></li>
+          <li><a href="/signup?language=pt-BR">Junte-se ao TMDB</a></li>
+          <li class="glyph search_buttons">
+            <a class="search" href="/search"><span class="glyphicons_v2 search blue"></span></a>
+            <a class="close hide" href="/search"><span class="glyphicons_v2 menu-close invert svg"></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="search_bar hide">
+    <section class="search show_search_false">
+      <div class="sub_media">
+        <form id="search_form" action="/search?language=pt-BR" method="get" accept-charset="utf-8">        
+          <input type="hidden" name="language" value="pt-BR">          
+          <label>
+            <span tabindex="-1" role="presentation" class="k-widget k-autocomplete k-autocomplete-clearable k-state-default" style=""><input dir="auto" id="search_v4" name="query" type="text" class="k-clear-value k-hidden" title="clear" role="button" tabindex="-1"><span class="k-icon k-i-x"></span></span><span class="k-icon k-i-loading k-hidden"></span></span>
+          </label>
+          <input type="submit" disabled="">
+        </form>
+      </div>
+    </section>
+  </div>
+  </header>
+  <main id="main" class="smaller  subtle show_search_false">
+  <section class="inner_content">
+  <div id="media_v4" class="media discover">
+    <div class="column_wrapper">
+      <div class="content_wrapper">
+        <div class="title">
+          <h2>Filmes Populares</h2>
+        </div>
+        <div class="content">
+          <div class="">
+          <div>
+            <div class="white_column no_pad">
+              <section id="media_results" class="panel results">
+                
+              <div class="media_items results">
+                <div id="page_1" class="page_wrapper">
+                  <div class="card style_1">
+                    <div class="image">
+                      <div class="wrapper">
+                        <a class="image" href="/movie/634649?language=pt-BR" title="Homem-Aranha: Sem Volta Para Casa">
+                        <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg 2x" alt="">
+                        </a>
+                      </div>
+                      <div class="options" data-id="634649" data-object-id="5d8e2865221ba60029b568d6" data-media-type="movie" data-role="tooltip">
+                        <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="consensus tight">
+                        <div class="outer_ring">
+                          <div class="user_score_chart 5d8e2865221ba60029b568d6" data-percent="83.0" data-track-color="#204529" data-bar-color="#21d07a">
+                            <div class="percent">  <span class="icon icon-r83"></span>
+                            </div>
+                          <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                        </div>
+                      </div>
+
+                      <h2><a href="/movie/634649?language=pt-BR" title="Homem-Aranha: Sem Volta Para Casa">Homem-Aranha: Sem Volta Para Casa</a></h2>
+                      <p>15 de dez de 2021</p>
+                    </div>
+
+                    <div class="hover 634649"></div>
+                  </div>
+    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/568124?language=pt-BR" title="Encanto">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="568124" data-object-id="5c11c827c3a36839b15cc39b" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5c11c827c3a36839b15cc39b" data-percent="77.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r77"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/568124?language=pt-BR" title="Encanto">Encanto</a></h2>
+                    <p>24 de nov de 2021</p>
+                  </div>
+
+                  <div class="hover 568124"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/476669?language=pt-BR" title="King's Man: A Origem">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/pVL9AyKKLfUwrYD6jhdsI15gBQ7.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/pVL9AyKKLfUwrYD6jhdsI15gBQ7.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/pVL9AyKKLfUwrYD6jhdsI15gBQ7.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="476669" data-object-id="59c1815f9251412c06001738" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 59c1815f9251412c06001738" data-percent="71.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r71"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/476669?language=pt-BR" title="King's Man: A Origem">King's Man: A Origem</a></h2>
+                    <p>22 de dez de 2021</p>
+                  </div>
+
+                  <div class="hover 476669"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/890656?language=pt-BR" title="Golpes de Vingança">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/AbSz0ygA92OpwiYDTBVFA8Cf4Aw.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/AbSz0ygA92OpwiYDTBVFA8Cf4Aw.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/AbSz0ygA92OpwiYDTBVFA8Cf4Aw.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="890656" data-object-id="6179775471f0950061a828eb" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 6179775471f0950061a828eb" data-percent="54.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r54"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/890656?language=pt-BR" title="Golpes de Vingança">Golpes de Vingança</a></h2>
+                    <p>17 de fev de 2022</p>
+                  </div>
+
+                  <div class="hover 890656"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/646385?language=pt-BR" title="Pânico">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/2PYQKeDhFwP5IX7EnIpCComBqj8.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/2PYQKeDhFwP5IX7EnIpCComBqj8.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/2PYQKeDhFwP5IX7EnIpCComBqj8.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="646385" data-object-id="5dc624986f8d950010c43733" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5dc624986f8d950010c43733" data-percent="69.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r69"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/646385?language=pt-BR" title="Pânico">Pânico</a></h2>
+                    <p>12 de jan de 2022</p>
+                  </div>
+
+                  <div class="hover 646385"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/632727?language=pt-BR" title="O Massacre da Serra Elétrica: O Retorno de Leatherface">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/4YMiQNAHpfm4sx8f5dL5zKWSFdc.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/4YMiQNAHpfm4sx8f5dL5zKWSFdc.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/4YMiQNAHpfm4sx8f5dL5zKWSFdc.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="632727" data-object-id="5d8516c4b76cbb001fdddd24" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5d8516c4b76cbb001fdddd24" data-percent="51.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r51"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/632727?language=pt-BR" title="O Massacre da Serra Elétrica: O Retorno de Leatherface">O Massacre da Serra Elétrica: O Retorno de Leatherface</a></h2>
+                    <p>18 de fev de 2022</p>
+                  </div>
+
+                  <div class="hover 632727"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/800510?language=pt-BR" title="Kimi: Alguém Está Escutando">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/DUNRzBjRKE1pvl2jiiooDLafKf.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/DUNRzBjRKE1pvl2jiiooDLafKf.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/DUNRzBjRKE1pvl2jiiooDLafKf.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="800510" data-object-id="6037e6846a34480040009caa" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 6037e6846a34480040009caa" data-percent="63.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r63"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/800510?language=pt-BR" title="Kimi: Alguém Está Escutando">Kimi: Alguém Está Escutando</a></h2>
+                    <p>10 de fev de 2022</p>
+                  </div>
+
+                  <div class="hover 800510"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/774825?language=pt-BR" title="A Era do Gelo: As Aventuras de Buck">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/1iVjKCGHPVNj7IQVB1DdpL8U7Y8.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/1iVjKCGHPVNj7IQVB1DdpL8U7Y8.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/1iVjKCGHPVNj7IQVB1DdpL8U7Y8.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="774825" data-object-id="5fd34777091e620041ef741a" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5fd34777091e620041ef741a" data-percent="72.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r72"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/774825?language=pt-BR" title="A Era do Gelo: As Aventuras de Buck">A Era do Gelo: As Aventuras de Buck</a></h2>
+                    <p>28 de jan de 2022</p>
+                  </div>
+
+                  <div class="hover 774825"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/524434?language=pt-BR" title="Eternos">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/mzezdUZEnpiUIlxpdyLO1R08Lqm.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/mzezdUZEnpiUIlxpdyLO1R08Lqm.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/mzezdUZEnpiUIlxpdyLO1R08Lqm.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="524434" data-object-id="5afb8ad40e0a26343d001722" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5afb8ad40e0a26343d001722" data-percent="72.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r72"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/524434?language=pt-BR" title="Eternos">Eternos</a></h2>
+                    <p>03 de nov de 2021</p>
+                  </div>
+
+                  <div class="hover 524434"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/585083?language=pt-BR" title="Hotel Transilvânia: Transformonstrão">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/9PbtCo5IIkd26WPQfZUpPyn6fTz.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/9PbtCo5IIkd26WPQfZUpPyn6fTz.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/9PbtCo5IIkd26WPQfZUpPyn6fTz.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="585083" data-object-id="5c76589d925141689756e1a1" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5c76589d925141689756e1a1" data-percent="71.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r71"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/585083?language=pt-BR" title="Hotel Transilvânia: Transformonstrão">Hotel Transilvânia: Transformonstrão</a></h2>
+                    <p>25 de fev de 2022</p>
+                  </div>
+
+                  <div class="hover 585083"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/597208?language=pt-BR" title="O Beco do Pesadelo">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/9HnTq2Kg0R4YpdB1B5r91mFt0S2.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/9HnTq2Kg0R4YpdB1B5r91mFt0S2.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/9HnTq2Kg0R4YpdB1B5r91mFt0S2.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="597208" data-object-id="5cbf886a0e0a266b96fb924d" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5cbf886a0e0a266b96fb924d" data-percent="71.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r71"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/597208?language=pt-BR" title="O Beco do Pesadelo">O Beco do Pesadelo</a></h2>
+                    <p>02 de dez de 2021</p>
+                  </div>
+
+                  <div class="hover 597208"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/768744?language=pt-BR" title="My Hero Academia: Missão Mundial de Heróis">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/7uVyf7or5KxQfO2h0OrV1ZZ99WK.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/7uVyf7or5KxQfO2h0OrV1ZZ99WK.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/7uVyf7or5KxQfO2h0OrV1ZZ99WK.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="768744" data-object-id="5fbface39f51af003fe77bef" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5fbface39f51af003fe77bef" data-percent="74.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r74"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/768744?language=pt-BR" title="My Hero Academia: Missão Mundial de Heróis">My Hero Academia: Missão Mundial de Heróis</a></h2>
+                    <p>06 de ago de 2021</p>
+                  </div>
+
+                  <div class="hover 768744"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/414906?language=pt-BR" title="Batman">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/cKNxg77ll8caX3LulREep4C24Vx.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/cKNxg77ll8caX3LulREep4C24Vx.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/cKNxg77ll8caX3LulREep4C24Vx.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="414906" data-object-id="57d1b0c49251410cae0003fd" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 57d1b0c49251410cae0003fd" data-percent="83.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r83"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/414906?language=pt-BR" title="Batman">Batman</a></h2>
+                    <p>01 de mar de 2022</p>
+                  </div>
+
+                  <div class="hover 414906"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/512195?language=pt-BR" title="Alerta Vermelho">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/pe17f8VDfzbvbHSAKAlcORtBHmW.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/pe17f8VDfzbvbHSAKAlcORtBHmW.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/pe17f8VDfzbvbHSAKAlcORtBHmW.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="512195" data-object-id="5aac33e3c3a36846b70051ec" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5aac33e3c3a36846b70051ec" data-percent="68.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r68"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/512195?language=pt-BR" title="Alerta Vermelho">Alerta Vermelho</a></h2>
+                    <p>04 de nov de 2021</p>
+                  </div>
+
+                  <div class="hover 512195"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/803114?language=pt-BR" title="The Requin">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/i0z8g2VRZP3dhVvvSMilbOZMKqR.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/i0z8g2VRZP3dhVvvSMilbOZMKqR.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/i0z8g2VRZP3dhVvvSMilbOZMKqR.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="803114" data-object-id="6043b3cfc4ad59006d0ec4e3" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 6043b3cfc4ad59006d0ec4e3" data-percent="45.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r45"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/803114?language=pt-BR" title="The Requin">The Requin</a></h2>
+                    <p>28 de jan de 2022</p>
+                  </div>
+
+                  <div class="hover 803114"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/438695?language=pt-BR" title="Sing 2">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/aWeKITRFbbwY8txG5uCj4rMCfSP.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/aWeKITRFbbwY8txG5uCj4rMCfSP.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/aWeKITRFbbwY8txG5uCj4rMCfSP.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="438695" data-object-id="58925a52c3a368461500013c" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 58925a52c3a368461500013c" data-percent="82.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r82"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/438695?language=pt-BR" title="Sing 2">Sing 2</a></h2>
+                    <p>01 de dez de 2021</p>
+                  </div>
+
+                  <div class="hover 438695"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/783461?language=pt-BR" title="Um Looop Eterno">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/b0cR03jYbO2hTrKnLVKQNRP8r6y.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/b0cR03jYbO2hTrKnLVKQNRP8r6y.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/b0cR03jYbO2hTrKnLVKQNRP8r6y.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="783461" data-object-id="5ff5b255abf8e200416924f5" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5ff5b255abf8e200416924f5" data-percent="59.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r59"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/783461?language=pt-BR" title="Um Looop Eterno">Um Looop Eterno</a></h2>
+                    <p>04 de fev de 2022</p>
+                  </div>
+
+                  <div class="hover 783461"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/801071?language=pt-BR" title="The Jack in the Box: Awakening">
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/3Ib8vlWTrAKRrTWUrTrZPOMW4jp.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/3Ib8vlWTrAKRrTWUrTrZPOMW4jp.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/3Ib8vlWTrAKRrTWUrTrZPOMW4jp.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="801071" data-object-id="603a65b4f621b24cf3e80acb" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 603a65b4f621b24cf3e80acb" data-percent="54.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r54"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/801071?language=pt-BR" title="The Jack in the Box: Awakening">The Jack in the Box: Awakening</a></h2>
+                    <p>03 de jan de 2022</p>
+                  </div>
+
+                  <div class="hover 801071"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/425909?language=pt-BR" title="Ghostbusters: Mais Além">
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/719aIhGrTrJ0yzkZ806Ea4rbonV.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/719aIhGrTrJ0yzkZ806Ea4rbonV.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/719aIhGrTrJ0yzkZ806Ea4rbonV.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="425909" data-object-id="5828d8159251417b2c02e50a" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 5828d8159251417b2c02e50a" data-percent="77.0" data-track-color="#204529" data-bar-color="#21d07a">
+                          <div class="percent">
+                            <span class="icon icon-r77"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/425909?language=pt-BR" title="Ghostbusters: Mais Além">Ghostbusters: Mais Além</a></h2>
+                    <p>11 de nov de 2021</p>
+                  </div>
+
+                  <div class="hover 425909"></div>
+                </div>
+                    
+                      <div class="card style_1">
+                  <div class="image">
+                    <div class="wrapper">
+                      <a class="image" href="/movie/860623?language=pt-BR" title="Pandemia: A Guerra Final">
+                          
+                    
+                      <img loading="lazy" class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/zBQFWjOIE3hoYCG67Y3VVaSnLyc.jpg" srcset="https://www.themoviedb.org/t/p/w220_and_h330_face/zBQFWjOIE3hoYCG67Y3VVaSnLyc.jpg 1x, https://www.themoviedb.org/t/p/w440_and_h660_face/zBQFWjOIE3hoYCG67Y3VVaSnLyc.jpg 2x" alt="">                      </a>
+                    </div>
+                    <div class="options" data-id="860623" data-object-id="6114715e3a993700714e0750" data-media-type="movie" data-role="tooltip">
+                      <a class="no_click" href="#"><div class="glyphicons_v2 circle-more white"></div></a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="consensus tight">
+                      <div class="outer_ring">
+                        <div class="user_score_chart 6114715e3a993700714e0750" data-percent="63.0" data-track-color="#423d0f" data-bar-color="#d2d531">
+                          <div class="percent">
+                            <span class="icon icon-r63"></span>
+                            
+                          </div>
+                        <canvas height="68" width="68" style="height: 34px; width: 34px;"></canvas></div>
+                      </div>
+                    </div>
+
+                    <h2><a href="/movie/860623?language=pt-BR" title="Pandemia: A Guerra Final">Pandemia: A Guerra Final</a></h2>
+                    <p>19 de out de 2021</p>
+                  </div>
+
+                  <div class="hover 860623"></div>
+                </div>
+                    <div class="card style_1 page_1_filler filler"></div>
+                    <div class="card style_1 page_1_filler filler"></div>
+                    <div class="card style_1 page_1_filler filler"></div>
+                    <div id="pagination_page_1" data-next-page="2" data-current-page="1" class="pagination infinite background_color light_blue">
+                      <div class="loading_wrapper hide">
+                        <div class="ball-scale-multiple loader">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                      </div>
+                      <p class="load_more"><a class="no_click load_more" data-next-page="2" data-current-page="1" href="/movie?page=2&amp;language=pt-BR">Carregar mais</a></p>
+                    </div>
+                  
+                  </div>
+                  </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="" class="apply full background_color light_blue disabled">
+            <div class="loading_wrapper hide">
+              <div class="ball-scale-multiple white loader">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <p class="load_more"><a class="no_click load_more" data-next-page="2" data-current-page="1" data-partial="" href="">Pesquisar</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="show_me_tooltip" class="hide">
+  <p>Entre para filtrar os itens que já assistiu.</p>
+</div>
+
+<div id="language_tooltip" class="hide">
+  <p>Filtra os resultados pelo idioma original.</p>
+</div>
+
+<div id="ott_tooltip" class="hide">
+  <p>Entre para editar os serviços que assina.</p>
+</div>  
+</main>
+
+    </div>
+
+    <footer class="single_column movie ">
+      <nav>
+        <div class="join">
+          <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="The Movie Database (TMDB)" width="130" height="94">
+            <a class="rounded" href="/signup?language=pt-BR">Junte-se a Comunidade</a>
+        </div>
+
+        <div>
+          <h3>O básico</h3>
+          <ul>
+            <li><a href="/about?language=pt-BR">Sobre o TMDB</a></li>
+            <li><a href="/about/staying-in-touch?language=pt-BR">Contate-nos</a></li>
+            <li><a href="/talk?language=pt-BR">Suporte</a></li>
+            <li><a href="/documentation/api?language=pt-BR">API</a></li>
+            <li><a href="https://status.themoviedb.org/" target="_blank" rel="noopener">Status do Sistema</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Envolva-se</h3>
+          <ul>
+            <li><a href="/bible?language=pt-BR"><span class="glyphicons glyphicons-asterisk"></span> Bíblia do Colaborador</a></li>
+            <li><a href="/movie/new?language=pt-BR">Adicionar um novo Filme</a></li>
+            <li><a href="/tv/new?language=pt-BR">Adicionar uma nova Série</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Comunidade</h3>
+          <ul>
+            <li><a href="/documentation/community/guidelines?language=pt-BR">Diretrizes</a></li>
+            <li><a href="/discuss?language=pt-BR">Discussões</a></li>
+            <li><a href="/leaderboard?language=pt-BR">Placar de colaboradores</a></li>
+            <li><a href="https://twitter.com/themoviedb" target="_blank" rel="noopener">Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legalidade</h3>
+          <ul>
+            <li><a href="/documentation/website/terms-of-use?language=pt-BR">Termos de uso</a></li>
+            <li><a href="/documentation/api/terms-of-use?language=pt-BR">Termos de Uso da API</a></li>
+            <li><a href="/privacy-policy?language=pt-BR">Política de privacidade</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section>Build 131fabf (3476)</section>
+    </footer>
+    <script src="https://www.themoviedb.org/assets/2/jquery.waypoints.inview.min-020c5d0ff05f6c391ec83334e99df1904b2971479d4334ac94fe7bca52bf287a.js"></script>
+    <script src="https://www.themoviedb.org/assets/2/footer-ec8fd260239bf7b85be386d03eb1bcb6a8ed5062578ef49351e9984ffee6bb86.js"></script>
+    <script src="https://www.themoviedb.org/assets/2/timeago/locales/jquery.timeago.pt-BR-65c58539675cb5a28d11d7f8ab4dc19309ca116598f8a4ad1ba97f761edb87f8.js"></script>
+
+
+    <script type="text/javascript">
+      let URL = "https://api.themoviedb.org/3/movie/popular?api_key=221381933449d5d15f7d0b6a6b1f87a1"
+
+
+    </script>
+    
+    </body>
+  </html>
